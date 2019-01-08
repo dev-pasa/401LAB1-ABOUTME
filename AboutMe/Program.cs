@@ -8,22 +8,18 @@ namespace AboutMe
         {
             //Ask();
             Ask();
+            Console.ReadKey();
         }
 
        
-
-        static void Ask()
+        static int AgeAsk(int count)
         {
-            int count = 0;
-            Console.WriteLine("Hi! My name is Dev and I am a learning software developer.");
-            Console.WriteLine("I will ask you some questions to tell you about me.");
-
             try
             {   //Question 1       
                 Console.WriteLine("How old am I? Enter a number: ");
                 string ageString = Console.ReadLine();
                 int ageNum = Int32.Parse(ageString);
-                if(ageNum > 30 || ageNum < 30)
+                if (ageNum > 30 || ageNum < 30)
                 {
                     Console.WriteLine("Wrong guess!");
                 }
@@ -37,6 +33,16 @@ namespace AboutMe
             {
                 Console.WriteLine("Wrong Format!!");
             }
+            return count ++;
+        }
+
+        static void Ask()
+        {
+            int count = 0;
+            Console.WriteLine("Hi! My name is Dev and I am a learning software developer.");
+            Console.WriteLine("I will ask you some questions to tell you about me.");
+
+            AgeAsk(count);
 
             //Question 2  
             Console.WriteLine(" ");
@@ -141,7 +147,7 @@ namespace AboutMe
                 Console.WriteLine("Wrong Format!!");
             }
 
-
+            Console.WriteLine();
             Console.WriteLine($"Out of 5 questions, you got {count} right.");
 
 
