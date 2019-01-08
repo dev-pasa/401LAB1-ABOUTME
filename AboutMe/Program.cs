@@ -6,13 +6,10 @@ namespace AboutMe
     {
         static void Main(string[] args)
         {
-            //Ask();
+            //Pass Ask() method inside Main, Ask() includes other sub methods that is passed into it;
             Ask();
             Console.ReadKey();
         }
-
-       
-        
 
         static void Ask()
         {
@@ -20,19 +17,21 @@ namespace AboutMe
             Console.WriteLine("Hi! My name is Dev and I am a learning software developer.");
             Console.WriteLine("I will ask you some questions to tell you about me.");
 
+            //Question 1
             bool ageAsk = AgeAsk();
             if(ageAsk == true)
             {
                 count++;
             }
-     
+            
+            //Question 2
             string location = LocQuestion();
-
             if(location == "Puyallup" || location == "Tacoma" || location == "tacoma" || location == "puyallup")
             {
                 count++;
             }
 
+            //Question 3
             int armyServe = ArmyServer();
             if(armyServe == 1)
             {
@@ -100,8 +99,6 @@ namespace AboutMe
 
             Console.WriteLine();
             Console.WriteLine($"Out of 5 questions, you got {count} right.");
-
-
 
         }
 
